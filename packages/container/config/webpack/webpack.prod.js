@@ -16,28 +16,7 @@ const prodConfig = {
       remotes: {
         marketing: `marketing@${domain}/marketing/remoteEntry.js`
       },
-      shared: {
-        react: {
-          singleton: true,
-          version: deps['react']
-        },
-        'react-dom': {
-          singleton: true,
-          version: deps['react-dom']
-        },
-        'react-router-dom': {
-          singleton: true,
-          version: deps['react-router-dom']
-        },
-        '@material-ui/core': {
-          singleton: true,
-          version: deps['@material-ui/core']
-        },
-        '@material-ui/icons': {
-          singleton: true,
-          version: deps['@material-ui/icons']
-        }
-      }
+      shared: deps
     }),
   ]
 }
