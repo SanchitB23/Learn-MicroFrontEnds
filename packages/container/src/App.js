@@ -1,8 +1,6 @@
 import React from 'react';
-import {mountMarket} from "marketing/MarketingApp";
 import MarketingApp from "./components/MarketingApp";
 
-console.log(mountMarket)
 const App = () => {
   return (
       <React.Fragment>
