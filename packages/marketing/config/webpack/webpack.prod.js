@@ -1,7 +1,7 @@
 const {merge} = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const commonConfig = require('./webpack.common')
-const packageJSON = require('../../package.json')
+const deps = require('../../package.json').dependencies
 
 const prodConfig = {
   mode: 'production',
@@ -15,7 +15,28 @@ const prodConfig = {
       exposes: {
         './MarketingApp': './src/bootstrap'
       },
-      shared: packageJSON.dependencies
+      shared: {
+        react: {
+          singleton: true,
+          version: deps['react']
+        },
+        'react-dom': {
+          singleton: true,
+          version: deps['react-dom']
+        },
+        'react-router-dom': {
+          singleton: true,
+          version: deps['react-router-dom']
+        },
+        '@material-ui/core': {
+          singleton: true,
+          version: deps['@material-ui/core']
+        },
+        '@material-ui/icons': {
+          singleton: true,
+          version: deps['@material-ui/icons']
+        }
+      }
     }),
   ]
 }
