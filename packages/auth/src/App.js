@@ -9,6 +9,7 @@ const generateClassname = createGenerateClassName({
 })
 
 const App = ({history, onSignIn}) => {
+  console.log("Test")
   return (
       <div>
         <StylesProvider generateClassName={generateClassname}>
